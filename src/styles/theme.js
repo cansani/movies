@@ -1,0 +1,16 @@
+export default {
+  COLORS: {
+    BACKGROUND: '#1C1B1E',
+    WHITE: "#FFF",
+    PINK: "#FF859B",
+    INPUT: "#262529",
+    TEXT_INPUT: "#948F99",
+    FONT_COLOR: "#F4EDE8",
+    P_COLOR: "#999591",
+    CARD_BACKGROUND: "#ff859b11",
+    TAG_BACKGROUND: "#312E38",
+    MARKERS_BACKGROUND: "#0D0C0F",
+    MARKER_BACKGROUND: "#262529",
+    SIGN_P: "#CAC4CF",
+  }
+}
