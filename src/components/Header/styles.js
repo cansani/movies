@@ -28,17 +28,16 @@ export const Profile = styled.div`
   gap: 1.6rem;
 
   .text-wrapper {
+    display: flex;
+    flex-direction: column;
+
     > span {
-      width: 100%;
       font-size: 1.4rem;
     }
 
     button {
       color: #948F99;
     }
-
-    display: flex;
-    flex-direction: column;
   }
 
   > a > img {

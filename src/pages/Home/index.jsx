@@ -8,7 +8,26 @@ import { CardFilm } from '../../components/CardFilm'
 
 import { AiOutlinePlus } from 'react-icons/ai'
 
+import { useEffect, useState } from 'react'
+
+import { api } from '../../services/api'
+
+
 export function Home() {
+  const [tagsSelected, setTagsSelected] = useState([])
+  const [search, setSearch] = useState('')
+  const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${search}&${tagsSelected}`)
+      setNotes(response.data)
+    }
+
+    fetchNotes()
+  }, [tagsSelected, search])
+
+
   return (
     <Container>
       <Header />
@@ -25,17 +44,15 @@ export function Home() {
         </ContainerTitleFilms>
 
         <ContainerFilms>
-          <CardFilm to="/preview/1"
-            data={{
-              title: 'Interestellar',
-              description: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se...',
-              tags: [
-                {id: '1', name: 'Ficção científica'},
-                {id: '2', name: 'Drama'},
-                {id: '3', name: 'Familia'}
-              ]
-            }}
-          />
+          {
+            notes.map(note => (
+              <CardFilm 
+                to={`/preview/${note.id}`}
+                key={String(note.id)}
+                data={note}
+            />
+          ))
+          }
         </ContainerFilms>
       </main>
     </Container>

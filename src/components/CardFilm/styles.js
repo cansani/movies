@@ -6,7 +6,7 @@ export const Container = styled(Link)`
   border: none;
 
   width: 100%;
-  height: 22.2rem;
+  /* height: 22.2rem; */
 
   padding: 3.2rem;
   

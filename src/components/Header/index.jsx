@@ -7,7 +7,20 @@ import { ButtonText } from '../ButtonText'
 
 import { BiSearch } from 'react-icons/bi'
 
+import { useAuth } from '../../hooks/auth'
+
+import { api } from '../../services/api'
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+
+import { useState } from 'react'
+
+
 export function Header() {
+  const { signOut, user } = useAuth()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
   return (
     <Container>
       <Link to="/">
@@ -20,14 +33,15 @@ export function Header() {
       />
       <Profile>
         <div className='text-wrapper'>
-          <span>Enzzo</span>
+          <span>{user.name}</span>
           <ButtonText
             size={1.4}
             title="sair"
+            onClick={signOut}
           />
         </div>
         <Link to="profile">
-          <img src="https://github.com/cansani.png" alt="avatar" />
+          <img src={avatarUrl} alt={user.name} />
         </Link>
       </Profile>
     </Container>
