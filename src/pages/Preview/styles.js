@@ -58,6 +58,10 @@ export const Content = styled.div`
   > span {
     color: ${({ theme }) => theme.COLORS.FONT_COLOR};
     text-align: justify;
-    padding-bottom: 12rem;
+    padding-bottom: 4rem;
+  }
+
+  button {
+    width: 10%;
   }
 `

@@ -25,7 +25,7 @@ export function SignIn() {
 
       <Form>
         <div className='title-wrapper'>
-          <h1>RocketMovies</h1>
+          <h1>Movies</h1>
           <span>Aplicação para acompanhar tudo que assistir.</span>
         </div>
 

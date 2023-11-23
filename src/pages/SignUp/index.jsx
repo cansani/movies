@@ -41,7 +41,7 @@ export function SignUp() {
 
       <Form>
         <div className='title-wrapper'>
-          <h1>RocketMovies</h1>
+          <h1>Movies</h1>
           <span>Aplicação para acompanhar tudo que assistir.</span>
         </div>
 
@@ -51,7 +51,7 @@ export function SignUp() {
           <Input
             type="text"
             icon={FiUser}
-            placeholder="Nome"
+            placeholder="Usuario"
             onChange={e => setName(e.target.value)}
           />
           <Input

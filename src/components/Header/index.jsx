@@ -29,13 +29,8 @@ export function Header() {
   return (
     <Container>
       <Link to="/">
-        <h1>RocketMovies</h1>
+        <h1>Movies</h1>
       </Link>
-      <Input
-        type="text"
-        icon={BiSearch}
-        placeholder="Pesquisar pelo título"
-      />
       <Profile>
         <div className='text-wrapper'>
           <span>{user.name}</span>
@@ -45,7 +40,7 @@ export function Header() {
             onClick={handleSignOut}
           />
         </div>
-        <Link to="profile">
+        <Link to="/profile">
           <img src={avatarUrl} alt={user.name} />
         </Link>
       </Profile>

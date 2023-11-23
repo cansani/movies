@@ -24,6 +24,7 @@ export function Create() {
 
   function handleAddTag() {
     setTags(prevState => [...prevState, newTag])
+    setNewTag("")
   }
 
   function handleRemoveTag(deleted) {
@@ -103,9 +104,9 @@ export function Create() {
           </div>
 
         <div className='buttons-container'>
-          <ButtonDelete>
+{/*           <ButtonDelete>
             Excluir filme
-          </ButtonDelete>
+          </ButtonDelete> */}
           <Button
             type="button"
             title="Salvar alterações"
